@@ -14,7 +14,9 @@ class ClosureSampleLogic: NSObject, SampleExecDelegate {
         var curryResult = self.curryFuncSample(self.nestedFuncSample(isMaximum: true))(nums : [1, 2, -1, 90, 88, 67])
         var resultString : String = "curry Result : \(curryResult)"
         
-        return "ClosureSampleLogic Done. \n" + resultString
+        var resultClosure = self.filteredNum([9, 1, 32, 44, 4], cond: self.overTen)
+        
+        return "ClosureSampleLogic Done. \n" + resultString + "\nresultClosure:\(resultClosure)"
     }
     
     private func tupleReturnFunc() -> (dummyFromIndex : Int, dummyToIndex : Int){
@@ -73,5 +75,20 @@ class ClosureSampleLogic: NSObject, SampleExecDelegate {
         }
         
         return bound
+    }
+    
+    private func filteredNum(nums : [Int], cond : (Int) -> Bool) -> [Int] {
+        var filteredNums : [Int] = []
+        for num in nums {
+            if cond(num) {
+                filteredNums.append(num)
+            }
+        }
+        
+        return filteredNums
+    }
+    
+    private func overTen(a : Int) -> Bool {
+        return a > 10
     }
 }
