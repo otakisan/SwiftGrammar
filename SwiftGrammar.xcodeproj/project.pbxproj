@@ -13,6 +13,12 @@
 		161E623519BC0053001A7BEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161E623319BC0053001A7BEF /* Main.storyboard */; };
 		161E623719BC0053001A7BEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 161E623619BC0053001A7BEF /* Images.xcassets */; };
 		161E624319BC0053001A7BEF /* SwiftGrammarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E624219BC0053001A7BEF /* SwiftGrammarTests.swift */; };
+		161E624F19BC06EC001A7BEF /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E624E19BC06EC001A7BEF /* MainMenuTableViewController.swift */; };
+		161E625119BC08E1001A7BEF /* SampleExecBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E625019BC08E1001A7BEF /* SampleExecBasicViewController.swift */; };
+		161E625419BC0A82001A7BEF /* MainMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E625319BC0A82001A7BEF /* MainMenuItem.swift */; };
+		161E625719BC0E0D001A7BEF /* SampleExecDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E625619BC0E0D001A7BEF /* SampleExecDelegate.swift */; };
+		161E625A19BC2473001A7BEF /* MainMenuSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E625919BC2473001A7BEF /* MainMenuSource.swift */; };
+		161E625C19BC28E6001A7BEF /* ClosureSampleLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E625B19BC28E6001A7BEF /* ClosureSampleLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		161E623C19BC0053001A7BEF /* SwiftGrammarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGrammarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		161E624119BC0053001A7BEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		161E624219BC0053001A7BEF /* SwiftGrammarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrammarTests.swift; sourceTree = "<group>"; };
+		161E624E19BC06EC001A7BEF /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
+		161E625019BC08E1001A7BEF /* SampleExecBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleExecBasicViewController.swift; sourceTree = "<group>"; };
+		161E625319BC0A82001A7BEF /* MainMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuItem.swift; sourceTree = "<group>"; };
+		161E625619BC0E0D001A7BEF /* SampleExecDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleExecDelegate.swift; sourceTree = "<group>"; };
+		161E625919BC2473001A7BEF /* MainMenuSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuSource.swift; sourceTree = "<group>"; };
+		161E625B19BC28E6001A7BEF /* ClosureSampleLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureSampleLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,11 @@
 		161E622919BC0052001A7BEF /* SwiftGrammar */ = {
 			isa = PBXGroup;
 			children = (
+				161E625819BC2357001A7BEF /* ViewData */,
+				161E625519BC0C03001A7BEF /* Protocols */,
+				161E625219BC0A07001A7BEF /* Entities */,
+				161E624D19BC0674001A7BEF /* Logics */,
+				161E624C19BC064F001A7BEF /* Views */,
 				161E622C19BC0053001A7BEF /* AppDelegate.swift */,
 				161E623119BC0053001A7BEF /* ViewController.swift */,
 				161E623319BC0053001A7BEF /* Main.storyboard */,
@@ -110,6 +127,47 @@
 				161E624119BC0053001A7BEF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		161E624C19BC064F001A7BEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				161E624E19BC06EC001A7BEF /* MainMenuTableViewController.swift */,
+				161E625019BC08E1001A7BEF /* SampleExecBasicViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		161E624D19BC0674001A7BEF /* Logics */ = {
+			isa = PBXGroup;
+			children = (
+				161E625B19BC28E6001A7BEF /* ClosureSampleLogic.swift */,
+			);
+			path = Logics;
+			sourceTree = "<group>";
+		};
+		161E625219BC0A07001A7BEF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				161E625319BC0A82001A7BEF /* MainMenuItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		161E625519BC0C03001A7BEF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				161E625619BC0E0D001A7BEF /* SampleExecDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		161E625819BC2357001A7BEF /* ViewData */ = {
+			isa = PBXGroup;
+			children = (
+				161E625919BC2473001A7BEF /* MainMenuSource.swift */,
+			);
+			path = ViewData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +270,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				161E623219BC0053001A7BEF /* ViewController.swift in Sources */,
+				161E625C19BC28E6001A7BEF /* ClosureSampleLogic.swift in Sources */,
 				161E622D19BC0053001A7BEF /* AppDelegate.swift in Sources */,
+				161E625A19BC2473001A7BEF /* MainMenuSource.swift in Sources */,
+				161E625119BC08E1001A7BEF /* SampleExecBasicViewController.swift in Sources */,
 				161E623019BC0053001A7BEF /* SwiftGrammar.xcdatamodeld in Sources */,
+				161E625419BC0A82001A7BEF /* MainMenuItem.swift in Sources */,
+				161E625719BC0E0D001A7BEF /* SampleExecDelegate.swift in Sources */,
+				161E624F19BC06EC001A7BEF /* MainMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
