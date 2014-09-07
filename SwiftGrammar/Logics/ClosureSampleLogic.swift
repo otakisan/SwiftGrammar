@@ -11,12 +11,42 @@ import UIKit
 class ClosureSampleLogic: NSObject, SampleExecDelegate {
     func execute(arg: AnyObject) -> String {
         
+        var resultItems : [AnyObject] = []
+        
         var curryResult = self.curryFuncSample(self.nestedFuncSample(isMaximum: true))(nums : [1, 2, -1, 90, 88, 67])
         var resultString : String = "curry Result : \(curryResult)"
+        resultItems.append(resultString)
         
+        // 関数を指定
         var resultClosure = self.filteredNum([9, 1, 32, 44, 4], cond: self.overTen)
+        resultItems.append("resultClosure:\(resultClosure)")
         
-        return "ClosureSampleLogic Done. \n" + resultString + "\nresultClosure:\(resultClosure)"
+        // 直接クロージャを記述
+        var resultClosure2 = self.filteredNum([1, 99, 41, 10, 33], cond: {(a : Int) -> Bool in a > 10})
+        resultItems.append("resultClosure2:\(resultClosure2)")
+        
+        // 引数及び戻り値の型を省略（型推論）
+        var resultClosure3 = self.filteredNum([33, 44, 9, 10], cond: {a in a > 10})
+        resultItems.append("resultClosure3:\(resultClosure3)")
+        
+        // さらに省略
+        var resultClosure4 = self.filteredNum([33, 44, 9, 10], cond: {$0 > 10})
+        resultItems.append("resultClosure4:\(resultClosure4)")
+        
+        // 末尾クロージャ式
+        var resultClosure5 = self.filteredNum([33, 44, 9, 10]){$0 > 10}
+        resultItems.append("resultClosure5:\(resultClosure5)")
+        
+        // @autoclosure属性 引数を取らず値のみ返却する場合は、{}を省略できる
+        var resultAutoClosure = self.lazyAnd(1 < 3, rhs: 2 < 3)
+        resultItems.append("resultAutoClosure:\(resultAutoClosure)")
+        
+        var traceOutString = ""
+        for resultItem in resultItems{
+            traceOutString += resultItem.description + "\n"
+        }
+        
+        return "ClosureSampleLogic Done. \n" + traceOutString
     }
     
     private func tupleReturnFunc() -> (dummyFromIndex : Int, dummyToIndex : Int){
@@ -90,5 +120,12 @@ class ClosureSampleLogic: NSObject, SampleExecDelegate {
     
     private func overTen(a : Int) -> Bool {
         return a > 10
+    }
+    
+    private func lazyAnd(lhs : Bool, rhs : @autoclosure () -> Bool) -> Bool {
+        if lhs {
+            return rhs()
+        }
+        return lhs
     }
 }
